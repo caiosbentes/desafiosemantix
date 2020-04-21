@@ -22,14 +22,14 @@ Requisitos:
 
 ## Pré-requisitos máquina local
 
-Para rápida reprodução da solução apresentada utilizo o terraform em um contêiner docker.
+Para rápida reprodução da solução apresentada optei por utilizar o terraform em um contêiner docker.
 
 A máquina que repoduzirá deverá ter dois componentes intalados:
 
 * Docker Engine
 * Docker Compose
 
-Segue abaixo a instação em um Sistema Linux.
+Segue abaixo a instalação em um Sistema Linux.
 
 Instalação do Docker Engine:
 
@@ -43,7 +43,15 @@ Instalação do Docker Compose:
 curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 ```
 
-Aplicando permisão de execução ao binário do Docker Compose:
+Aplicação de permisão de execução ao binário do Docker Compose:
 ```bash
 chmod +x /usr/local/bin/docker-compose
+```
+
+Há também a nescessidade de declarar as seguintes variáveis de ambiente:
+```bash
+export AWS_ACCESS_KEY_ID=<YOUR_AWS_ACCESS_KEY_ID>
+```
+```bash
+export AWS_SECRET_ACCESS_KEY=<YOUR_AWS_SECRET_ACCESS_KEY>
 ```

@@ -28,3 +28,8 @@ variable "servers" {
   default = 1
 }
 
+variable "ami_key_pair_name" {
+  description = "Par de chaves para acesso ssh"
+  default = "recovery-key"
+}
+

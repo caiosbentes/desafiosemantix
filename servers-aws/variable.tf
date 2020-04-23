@@ -1,6 +1,6 @@
 variable "region" {
   description = "Define em qual região a instância será implantada"
-  default = "us-east-1"
+  default = "us-east-1a"
 }
 
 variable "name" {
@@ -20,7 +20,7 @@ variable "ami" {
 
 variable "instance_type" {
   description = "AWS Instance type define a configuração de hardware da máquina"
-  default = "t2.micro"
+  default = "t3.large"
 }
 
 variable "servers" {

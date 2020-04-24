@@ -55,9 +55,22 @@ export AWS_ACCESS_KEY_ID=<YOUR_AWS_ACCESS_KEY_ID>
 ```bash
 export AWS_SECRET_ACCESS_KEY=<YOUR_AWS_SECRET_ACCESS_KEY>
 ```
+
+#Introdução
+
+Com a finalidade decompartilhar o [state](https://www.terraform.io/docs/state/index.html) do Terraform, utilizaremos o S3 como backend de estado e DynamoDB como controle de lock.
+
+Valide de seu usuário aws tem as [permissões adequadas](https://www.terraform.io/docs/backends/types/s3.html) para tal.
+
+Para levantar o ambiente corretamente devemos serguir os passos abaixo.
+
+* Crie um bucket de S3 destinado ao armazenamento de estado do Terraform e habilite o versionamento dos objetosdo Bucket.
+* Altere a variável `bucket` no arquivo `main.tf` dentro da pasta `servers-aws`, para o nome do bucket criado.
+* Editar o arquivo `variable.tf` dentro da pasta `servers-aws` e editar a variável `ami_key_pair_name` para um nome do arquivo da chave privada que já utilize na aws.
+
 ## Execução
 
-Para subir infrae deste desaafio você deve executar os seguinte comando:
+Para subir infra deste desafio você deve executar os seguinte comando:
 
 ```bash
 docker-compose -f up

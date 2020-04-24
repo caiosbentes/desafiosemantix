@@ -56,7 +56,7 @@ export AWS_ACCESS_KEY_ID=<YOUR_AWS_ACCESS_KEY_ID>
 export AWS_SECRET_ACCESS_KEY=<YOUR_AWS_SECRET_ACCESS_KEY>
 ```
 
-#Introdução
+## Introdução
 
 Com a finalidade decompartilhar o [state](https://www.terraform.io/docs/state/index.html) do Terraform, utilizaremos o S3 como backend de estado e DynamoDB como controle de lock.
 

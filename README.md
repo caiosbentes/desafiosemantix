@@ -55,3 +55,17 @@ export AWS_ACCESS_KEY_ID=<YOUR_AWS_ACCESS_KEY_ID>
 ```bash
 export AWS_SECRET_ACCESS_KEY=<YOUR_AWS_SECRET_ACCESS_KEY>
 ```
+## Execução
+
+Para subir infrae deste desaafio você deve executar os seguinte comando:
+
+```bash
+docker-compose -f up
+```
+
+Para remover toda a infra deste desaafio você deve executar o seguinte comando:
+
+```bash
+docker-compose -f docker-compose-destroy.yml up
+```
+

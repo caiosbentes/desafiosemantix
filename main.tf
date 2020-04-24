@@ -7,7 +7,7 @@ terraform {
   backend "s3" {
     # Lembre de trocar o bucket para o seu, não pode ser o mesmo nome
     bucket = "tfstates-desafio"
-    #dynamodb_table = = "terraform_state_lock"
+    dynamodb_table = "terraform_state_lock"
     key    = "terraform-test.tfstate"
     region = "us-east-1"
   }

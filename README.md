@@ -65,7 +65,7 @@ Valide de seu usuário aws tem as [permissões adequadas](https://www.terraform.
 Para levantar o ambiente corretamente devemos serguir os passos abaixo.
 
 * Criar um bucket de S3 destinado ao armazenamento de estado do Terraform e habilite o versionamento dos objetosdo Bucket.
-* Altere a variável `bucket` no arquivo `main.tf` dentro da pasta `servers-aws`, para o nome do bucket criado.
+* Altere a variável `bucket` no arquivo `main.tf` da pasta raiz para o nome do bucket criado.
 * Editar o arquivo `variable.tf` dentro da pasta `servers-aws` e editar a variável `ami_key_pair_name` para um nome do arquivo da chave privada que já utilize na aws.
 * Criar uma tabela de DynamoDB chamada `terraform_state_lock`;
   * A chave primária desta tabela será `LockID`.
@@ -75,10 +75,10 @@ Para levantar o ambiente corretamente devemos serguir os passos abaixo.
 Para subir infra deste desafio você deve executar os seguinte comando:
 
 ```bash
-docker-compose -f up
+docker-compose -f docker-compose-create.yml up
 ```
 
-Para remover toda a infra deste desaafio você deve executar o seguinte comando:
+Para remover toda a infra deste desafio você deve executar o seguinte comando:
 
 ```bash
 docker-compose -f docker-compose-destroy.yml up

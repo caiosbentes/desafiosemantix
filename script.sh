@@ -26,10 +26,14 @@ function install_docker_doccker_compose() {
 function create_docker_compose() {
 cat <<EOF > /opt/docker-compose.yml
 version: "3"
-
 networks:
   network: {}
-
+volumes:
+  nexus_data:
+  jenkins_data:
+  sonar_data:
+  postgres_data:
+  db-data:
 services:
   nexus:
     networks:
@@ -39,8 +43,7 @@ services:
     ports:
     - 8081:8081
     volumes:
-    - /opt/nexus/:/var/lib/nexus
-
+    - nexus_data:/var/lib/nexus
   sonarqube:
     networks:
     - network
@@ -53,8 +56,7 @@ services:
     ports:
     - 9000:9000
     volumes:
-    - /opt/sonar/:/var/lib/sonar
-
+    - sonar_data:/var/lib/sonar
   database:
     networks:
     - network
@@ -65,8 +67,7 @@ services:
       POSTGRES_USER: username
       POSTGRES_PASSWORD: 11235813
     volumes:
-    - /opt/postgres:/var/lib/postgresql
-
+    - postgres_data:/var/lib/postgresql
   jenkins:
     networks:
     - network
@@ -76,7 +77,7 @@ services:
     - 8080:8080
     - 50000:50000
     volumes:
-    - /opt/jenkins:/var/jenkins_home
+    - jenkins_data:/var/jenkins_home
 EOF
 }
 

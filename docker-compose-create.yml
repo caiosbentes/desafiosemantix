@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  terraform:
+    image: hashicorp/terraform:light
+    environment:
+      AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+      AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+    volumes:
+    - "$PWD:/app"
+    working_dir: /app
+    entrypoint: [""]
+    command: sh -c "terraform init && terraform plan -out plano && terraform apply 'plano'"
